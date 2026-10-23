@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Controle Financeiro</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Meu Controle Financeiro</h1>
+        <p>Organize suas receitas e despesas</p>
+    </header>
+
+    <main>
+        <section class="cards">
+            <article class="card saldo">
+                <h3>Saldo atual</h3>
+                <p id="saldo">R$ 0,00</p>
+            </article>
+
+            <article class="card receita">
+                <h3>Total de receitas</h3>
+                <p id="receitas">R$ 0,00</p>
+            </article>
+
+            <article class="card despesa">
+                <h3>Total de despesas</h3>
+                <p id="despesas">R$ 0,00</p>
+            </article>
+        </section>
+
+        <section class="painel">
+            <h2>Nova transação</h2>
+
+            <form id="form-transacao">
+                <label for="descricao">Descrição</label>
+                <input id="descricao" type="text"
+                       placeholder="Ex.: Salário ou mercado" required>
+
+                <label for="tipo">Tipo</label>
+                <select id="tipo" required>
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+
+                <label for="valor">Valor (R$)</label>
+                <input id="valor" type="number" min="0.01"
+                       step="0.01" placeholder="0,00" required>
+
+                <label for="categoria">Categoria</label>
+                <input id="categoria" type="text"
+                       placeholder="Ex.: Trabalho ou Alimentação" required>
+
+                <button type="submit">Cadastrar transação</button>
+                <p id="mensagem"></p>
+            </form>
+        </section>
+
+        <section class="painel">
+            <h2>Histórico de transações</h2>
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-transacoes"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
