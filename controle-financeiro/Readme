@@ -1,0 +1,90 @@
+Objetivo
+Criar uma aplicação web para controlar receitas, despesas e saldo financeiro, permitindo cadastrar transações e visualizar um resumo financeiro.
+
+Progamas Utilizados
+- Python 3.13
+- FastAPI para o backend
+- SQLite para armazenar os dados
+- SQLAlchemy para comunicação com o banco de dados
+- Pydantic para validação dos dados
+- Uvicorn para executar o servidor
+- HTML para estruturar a interface
+- CSS para estilizar o painel
+- JavaScript para integrar a interface com a API
+
+Estrutura do Projeto
+
+controle-financeiro/
+- main.py
+- database.py
+- models.py
+- financeiro.db
+- frontend/
+  - index.html
+  - style.css
+  - script.js
+
+Funcionalidade Do Sistema
+
+O sistema deve permitir:
+
+1. Cadastrar receitas.
+2. Cadastrar despesas.
+3. Listar todas as transações.
+4. Calcular o total de receitas.
+5. Calcular o total de despesas.
+6. Calcular o saldo disponível.
+7. Armazenar as transações no banco de dados SQLite.
+8. Validar os dados antes de salvar uma transação.
+
+Modelo de Dados
+
+Cada transação deve possuir:
+
+- id: identificador único.
+- descricao: descrição da transação.
+- tipo: receita ou despesa.
+- valor: valor monetário.
+- categoria: categoria financeira.
+
+O sistema deve rejeitar valores iguais ou inferiores a zero e tipos de transação inválidos.
+
+End point da API
+
+- GET / — abre a interface principal.
+- POST /transacoes — cadastra uma receita ou despesa.
+- GET /transacoes — lista as transações cadastradas.
+- GET /resumo — retorna o total de receitas, despesas e saldo.
+
+Interface Visual
+
+Criar um painel financeiro moderno, contendo:
+
+- Cartão com total de receitas.
+- Cartão com total de despesas.
+- Cartão com saldo disponível.
+- Formulário para cadastrar receitas e despesas.
+- Campo para descrição, valor e categoria.
+- Histórico de transações.
+- Identificação visual das receitas e despesas.
+- Atualização dos dados após o cadastro de uma transação.
+
+Testes realizados
+
+Exemplo de receita:
+
+{
+  "descricao": "Salário",
+  "tipo": "receita",
+  "valor": 2500.00,
+  "categoria": "Salário"
+}
+
+Exemplo de despesa:
+
+{
+  "descricao": "Compra no mercado",
+  "tipo": "despesa",
+  "valor": 150.00,
+  "categoria": "Alimentação"
+}
